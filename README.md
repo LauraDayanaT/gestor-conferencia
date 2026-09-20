@@ -20,10 +20,11 @@ App web para gestionar la parte científica de una conferencia: usuarios, artíc
 | Manuel | Back | `feature/agenda` |
 
 ## 🛠️ Stack
-React · Django REST · PostgreSQL · ApexCharts · Taiga
+React · Django REST · PostgreSQL (Supabase) · ApexCharts · Taiga · Vercel · Render
 
 ## 🔀 Flujo Git
 - `main` → estable
 - `develop` → integración
 - `feature/*` → trabajo por equipo
-- Todo va por **Pull Request** con 1 aprobación
+- **Todo cambio va por Pull Request a `develop`**
+- `main` solo se actualiza antes de sustentaciones (20 oct, 17 nov, 22 dic)
