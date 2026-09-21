@@ -11,13 +11,13 @@ App web para gestionar la parte científica de una conferencia: usuarios, artíc
 
 | Persona | Rol | Rama |
 |---|---|---|
-| Laura | Product Owner / Docs | `docs/sprint-0` |
+| Laura | Product Owner + Backend | `docs/sprint-0`,  `chore/setup-base`, `feature/agenda` |
 | Geraldin | Front | `feature/usuarios` |
 | Daniel | Back | `feature/usuarios` |
 | Daniel Eduardo | Front | `feature/articulos` |
 | Deisy | Back | `feature/articulos` |
 | Enrique | Front | `feature/agenda` |
-| Manuel | Back | `feature/agenda` |
+
 
 ## 🛠️ Stack
 React · Django REST · PostgreSQL (Supabase) · ApexCharts · Taiga · Vercel · Render
