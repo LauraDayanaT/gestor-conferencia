@@ -12,6 +12,7 @@ const Login = () => {
   const [correo, setCorreo] = useState('');
   const [contrasena, setContrasena] = useState('');
   const [errorCredenciales, setErrorCredenciales] = useState(false);
+  const [errorConexion, setErrorConexion] = useState(false);
   const [cargando, setCargando] = useState(false);
   const [captchaToken, setCaptchaToken] = useState(null);
 
@@ -23,6 +24,7 @@ const Login = () => {
         return;
     }
     setErrorCredenciales(false);
+    setErrorConexion(false);
     setCargando(true);
 
     try {
@@ -41,7 +43,7 @@ const Login = () => {
       // TODO: guardar token y redirigir según el rol del usuario
       console.log(datos);
     } catch (error) {
-      setErrorCredenciales(true);
+      setErrorConexion(true);
     } finally {
       setCargando(false);
     }
@@ -55,6 +57,10 @@ const Login = () => {
 
         {errorCredenciales && (
           <div className="login-error">Usuario o contraseña inválidos</div>
+        )}
+
+        {errorConexion && (
+          <div className="login-error">Error de conexión, intenta de nuevo</div>
         )}
 
         <form onSubmit={manejarEnvio} className="login-formulario">
