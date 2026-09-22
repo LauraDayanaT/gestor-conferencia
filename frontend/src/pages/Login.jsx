@@ -3,7 +3,7 @@ import './Login.css';
 import logo from '../assets/logo.png';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-const CAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;;
+const CAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
 
 const API_URL = import.meta.env.VITE_API_URL;
 
