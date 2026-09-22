@@ -3,9 +3,9 @@ import './Login.css';
 import logo from '../assets/logo.png';
 import ReCAPTCHA from 'react-google-recaptcha';
 
-const CAPTCHA_SITE_KEY = '6LfhYcktAAAAABWLt07vy3u93oThV2ImlKJckRuK';
+const CAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY;;
 
-const API_URL = 'http://localhost:8000/api';
+const API_URL = import.meta.env.VITE_API_URL;
 
 //componente funcional de React para la página de login
 const Login = () => {
