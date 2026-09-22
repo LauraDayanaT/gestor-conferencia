@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import './Login.css';
 import logo from '../assets/logo.png';
+import ReCAPTCHA from 'react-google-recaptcha';
+
+const CAPTCHA_SITE_KEY = '6LfhYcktAAAAABWLt07vy3u93oThV2ImlKJckRuK';
 
 const API_URL = 'http://localhost:8000/api';
 
@@ -10,10 +13,15 @@ const Login = () => {
   const [contrasena, setContrasena] = useState('');
   const [errorCredenciales, setErrorCredenciales] = useState(false);
   const [cargando, setCargando] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState(null);
 
   //funcion para manejar el envío del formulario de login - se ejecuta cuando el usuario hace submit en el formulario
   const manejarEnvio = async (evento) => {
     evento.preventDefault();
+    if (!captchaToken) {
+        setErrorCredenciales(true);
+        return;
+    }
     setErrorCredenciales(false);
     setCargando(true);
 
@@ -21,7 +29,7 @@ const Login = () => {
       const respuesta = await fetch(`${API_URL}/login/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ correo, contrasena }),
+        body: JSON.stringify({ correo, contrasena, captcha_token: captchaToken }),
       });
 
       if (!respuesta.ok) {
@@ -76,7 +84,16 @@ const Login = () => {
             Olvidé mi clave
           </a>
 
-          <div className="login-captcha">CAPTCHA</div>
+        {/*mostrar el captcha de Google reCAPTCHA*/}
+        <div className="login-captcha">
+            <ReCAPTCHA
+                sitekey={CAPTCHA_SITE_KEY}
+                onChange={(token) => setCaptchaToken(token)}
+                onExpired={() => setCaptchaToken(null)}
+            />
+        </div>
+
+
 
           <button type="submit" className="login-boton" disabled={cargando}>
             {cargando ? 'Ingresando...' : 'Ingresar'}
