@@ -1,21 +1,19 @@
-
-/*contenedor 2*/
 .login-contenedor {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 96vh;
-  background-color:  #ffffff ;/*#9ac0eb - #05CAFB*/
+  background-color: #000000; 
   padding: 16px;
-
 }
 
 .login-tarjeta {
   width: 100%;
   max-width: 360px;
   background-color: #141B23;
-  border-radius: 8px;
-  padding: 32px 24px;  box-shadow: 0 1px 4px rgb(0, 0, 0);
+  border-radius: 12px;
+  padding: 30px 28px;  
+  border: 1px solid #05cafb;
 }
 
 .login-logo {
@@ -28,7 +26,7 @@
 
 .login-titulo {
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   margin-top: 12px;    
   margin-bottom: 12px;
@@ -66,7 +64,7 @@
 
 .login-input:hover {
   border-color: #05cafb;
-  box-shadow: 0 0 8px #05cafb;
+  box-shadow: 0 1px 10px #05cafb;
 }
 
 .login-input--error {
@@ -84,37 +82,38 @@
 
 .login-enlace-derecha:hover {
   color: #05cafb;
-  
-  /*text-shadow: 0 0 8px #05cafb;*/
 }
 
-/*buscar cómo insertar un captcha funcional*/
 .login-captcha {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
   transform: scale(0.80); 
   transform-origin: center;
-  
 }
 
-/*boton "ingresar"*/
 .login-boton {
+  display: flex;
   height: 40px;
+  width: 200px;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
   background-color: #05cafb  ;
   color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
+  border: 1px solid #05cafb;
+  border-radius: 6px;
+  font-size: 15px;
   cursor: pointer;
   transition: 0.2s;
 
 }
 .login-boton:hover {
-    background-color: #07abd8;
-    box-shadow: 0 0 3px #05cafb;
-    font-size: 18px;
+    box-shadow: 0px 0px 3px #ffffff;
+    border-color: #ffffff;
+    font-size: 17px;
     color: #ffffff;
+    
 }
 
 .login-boton:disabled {
@@ -148,7 +147,7 @@
 
 /*boton ingresar con google*/
 .login-social {
-  /*display: flex;*/
+  
   gap: 10px;
   margin-bottom: 20px;
 }
@@ -157,7 +156,7 @@
   flex: 1;
   height: 36px;
   border: 1px solid #cccccc;
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: #050000;
   font-size: 13px;
   margin-bottom: 10px;
@@ -174,7 +173,6 @@
 
 
 /*para registrarse*/
-
 .login-registro {
   text-align: center;
   font-size: 13px;
